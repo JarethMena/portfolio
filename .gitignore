@@ -1,0 +1,110 @@
+# General
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# macOS
+*.DS_Store
+
+# Windows
+*.lnk
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+ENV.bak/
+venv.bak/
+*.pyc
+*.pyo
+*.pyd
+*.python-version
+
+# Django
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+media
+staticfiles
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.swp
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+
+# Eclipse
+.project
+.classpath
+.settings/
+bin/
+tmp/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Build directories
+build/
+dist/
+out/
+target/
+
+# Logs
+logs/
+*.log
+
+# Dependency directories
+node_modules/
+bower_components/
+
+# Environment variables
+.env
+
+# Database files
+*.sql
+*.sqlite
+*.sqlite3
+*.db
+
+# Compiled files
+*.o
+*.so
+*.a
+*.out
+
+# Archives
+*.zip
+*.tar.gz
+*.tar.bz2
+*.rar
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# OS generated files
+.DS_Store
+Thumbs.db
