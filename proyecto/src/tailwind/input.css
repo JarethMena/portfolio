@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'open-sans';
+    src: url('../assets/fonts/OpenSans.ttf');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'open-sans';
+    src: url('../assets/fonts/OpenSans-Italic.ttf');
+    font-style: italic;
+}
+@font-face {
+    font-family: 'open-sans';
+    src: url('../assets/fonts/OpenSans-Bold.ttf');
+    font-style: normal;
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'open-sans';
+    src: url('../assets/fonts/OpenSans-BoldItalic.ttf');
+    font-style: italic;
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'open-sans';
+    src: url('../assets/fonts/OpenSans-Light.ttf');
+    font-style: normal;
+    font-weight: 200;
+}
+@font-face {
+    font-family: 'open-sans';
+    src: url('../assets/fonts/OpenSans-LightItalic.ttf');
+    font-style: italic;
+    font-weight: 200;
+}
+@font-face {
+    font-family: 'bebas-neue';
+    src: url('../assets/fonts/BebasNeue.ttf');
+    font-style: normal;
+}
+
+@layer base {
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'bebas-neue', sans-serif;
+    }
+    body {
+        font-family: 'open-sans', sans-serif;
+    }
+    /*Standard Sizes. Can be changed for aesthetic purposes.*/
+    h1 {
+        @apply text-4xl;
+    }
+
+    h2 {
+        @apply text-2xl;
+    }
+
+    h3 {
+        @apply text-xl;
+    }
+
+    h4 {
+        @apply text-lg;
+    }
+
+    h5 {
+        @apply text-lg;
+    }
+
+    h6 {
+        @apply text-sm;
+    }
+}
+
+.rainbow-passive-aura {
+    animation: rainbow-strong 3s infinite linear;
+}
+
+.rainbow-hover-aura:hover {
+    animation: rainbow-weak 5s infinite linear;
+}
+
+@keyframes rainbow-strong {
+    0% { box-shadow: 0px 0px 12px 5px red; }
+    20% { box-shadow: 0px 0px 12px 5px orange; }
+    40% { box-shadow: 0px 0px 12px 5px green; }
+    60% { box-shadow: 0px 0px 12px 5px blue; }
+    80% { box-shadow: 0px 0px 12px 5px purple; }
+    100% { box-shadow: 0px 0px 12px 5px red; }
+}
+
+@keyframes rainbow-weak {
+    0% { box-shadow: 0px 0px 8px red; }
+    20% { box-shadow: 0px 0px 8px orange; }
+    40% { box-shadow: 0px 0px 8px green; }
+    60% { box-shadow: 0px 0px 8px blue; }
+    80% { box-shadow: 0px 0px 8px purple; }
+    100% { box-shadow: 0px 0px 8px red; }
+}
