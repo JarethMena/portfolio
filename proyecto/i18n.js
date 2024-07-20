@@ -14,20 +14,24 @@ i18n
         resources: {
             en: {
                 translation: {
-                    switchToLang: "Cambiar a Español",
+                    switchToLang: "Translate to Spanish",
                     lights:{
                         on: "Turn Lights On",
                         off: "Turn Lights Off"
-                    }
+                    },
+                    downloadCv: "Download CV",
+                    sendEmail: "Send Email"
                 }
             },
             es: {
                 translation: {
-                    switchToLang: "Switch to English",
+                    switchToLang: "Traducir a Inglés",
                     lights:{
                         on: "Encender luces",
                         off: "Apagar luces"
-                    }
+                    },
+                    downloadCv: "Descargar CV",
+                    sendEmail: "Enviar Correo"
                 }
             }
         }
