@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import {MenuElementItem} from "../types/MenuElement.tsx";
 
-const MenuElement: React.FC<MenuElement> = ({ icon, tooltip, execute }) => {
+const MenuElement: React.FC<MenuElementItem> = ({ icon, tooltip, execute }) => {
     const [isVisible, setVisible] = useState(false);
     const handleMouseEnter = () => {
         setVisible(true);

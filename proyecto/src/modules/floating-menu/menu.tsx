@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import MenuElement from "./menu-element.tsx";
+import {MenuElementItem} from "../types/MenuElement.tsx";
 
-const Menu: React.FC<{MenuElementsList: MenuElement[]}> = ({MenuElementsList}) => {
+const Menu: React.FC<{MenuElementsList: MenuElementItem[]}> = ({MenuElementsList}) => {
 
     const [hoveredOnce, setHoveredOnce] = useState<boolean>(false);
 
@@ -9,7 +10,7 @@ const Menu: React.FC<{MenuElementsList: MenuElement[]}> = ({MenuElementsList}) =
         setHoveredOnce(true);
     }
 
-    const renderMenuElements:React.FC<MenuElement[]> = (list) => {
+    const renderMenuElements:React.FC<MenuElementItem[]> = (list) => {
         const renderedElements = list.map((el) => {
             return <MenuElement tooltip={el.tooltip} execute={el.execute} icon={el.icon} key={el.key}/>;
         })

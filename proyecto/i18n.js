@@ -20,7 +20,18 @@ i18n
                         off: "Turn Lights Off"
                     },
                     downloadCv: "Download CV",
-                    sendEmail: "Send Email"
+                    sendEmail: "Send Email",
+                    emailInvitation: "Let's Talk!",
+                    titleLabel: "Title",
+                    titlePlaceholder:"Let's have a conversation!",
+                    emailContactLabel:"Email Contact",
+                    emailContactPlaceholder:"your@email.com",
+                    messageLabel:"Message",
+                    messagePlaceholder:"Greetings Mena...",
+                    sendLabel:"Send",
+                    emailFailure:"Failed to send message",
+                    requiredFieldWarn: "This field is required",
+                    closeOverlay:"You can now close this overlay."
                 }
             },
             es: {
@@ -31,7 +42,18 @@ i18n
                         off: "Apagar luces"
                     },
                     downloadCv: "Descargar CV",
-                    sendEmail: "Enviar Correo"
+                    sendEmail: "Enviar Correo",
+                    emailInvitation: "¡Hablemos!",
+                    titleLabel: "Título",
+                    titlePlaceholder:"Tengamos una conversación",
+                    emailContactLabel:"Correo Electrónico",
+                    emailContactPlaceholder:"tu@correo.com",
+                    messageLabel:"Mensaje",
+                    messagePlaceholder:"Saludos Mena...",
+                    sendLabel:"Enviar",
+                    emailFailure:"El envío de mensaje ha fallado",
+                    requiredFieldWarn: "Espacio obligatorio",
+                    closeOverlay:"Ahora puede cerrar esta ventana.",
                 }
             }
         }

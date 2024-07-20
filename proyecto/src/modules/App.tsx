@@ -1,13 +1,15 @@
 import '../tailwind/output.css'
 import Menu from './floating-menu/menu.tsx'
 import {useEffect, useState} from "react";
-import {faSun, faMoon, faGlobe, faFilePdf, faEnvelope} from "@fortawesome/free-solid-svg-icons";
+import {faSun, faMoon, faGlobe, faFilePdf, faEnvelope, faXmark} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {useTranslation} from 'react-i18next';
 import { saveAs } from 'file-saver';
 import spanishCv from '../assets/pdfs/CV_JarethMena_Spanish.pdf';
 import englishCv from '../assets/pdfs/CV_JarethMena_English.pdf';
 import {faGithub, faLinkedin} from "@fortawesome/free-brands-svg-icons";
+import Overlay from "./utilities/overlay.tsx";
+import EmailContactForm from "./utilities/email-contact-form.tsx";
 
 function App() {
     const lngs = {
@@ -16,7 +18,7 @@ function App() {
     };
 
     const { t, i18n} = useTranslation();
-    const [isDarkMode, setDarkMode] = useState<boolean>(false);
+    const [isDarkMode, setDarkMode] = useState<boolean>(true);
     const [language, setLanguage] = useState<string>(lngs.english);
 
     const handleDarkMode = () => {
@@ -38,13 +40,13 @@ function App() {
         i18n.changeLanguage(language);
     },[language]);
 
-    const emailTo:string = "mailto:menaleitonj@gmail.com?subject=Subject&body=Body";
     const github:string = "https://github.com/JarethMena";
     const linkedin:string = "https://www.linkedin.com/in/jareth-mena/";
 
     const handleRedirect = (target:string) => {
         window.open(target, "_blank");
     };
+
     const menuElements: MenuElement[] = [
         {
             tooltip: `${isDarkMode ? t('lights.on') : t('lights.off')}`,
@@ -67,7 +69,7 @@ function App() {
         {
             tooltip: t('sendEmail'),
             icon: <FontAwesomeIcon className="text-2xl text-neutral-100 dark:text-neutral-600" icon={faEnvelope}/>,
-            execute: () => handleRedirect(emailTo),
+            execute: () => openOverlay(),
             key: 'sendemail',
         },
         {
@@ -80,13 +82,35 @@ function App() {
             tooltip: 'Linkedin',
             icon: <FontAwesomeIcon className="text-2xl text-neutral-100 dark:text-neutral-600" icon={faLinkedin} />,
             execute: () => handleRedirect(linkedin),
-            key: 'github',
+            key: 'linkedin',
         },
     ];
 
+    const [isOverlayOpen, setIsOverlayOpen] = useState(false);
+    const openOverlay = () => setIsOverlayOpen(true);
+    const closeOverlay = () => setIsOverlayOpen(false);
+
+    const emailOverlay = () => {
+      return <div>
+            {isOverlayOpen && (
+                <Overlay clickBgClose={true} bgClose={closeOverlay}>
+                    <div className="p-4 bg-white rounded-xl shadow-lg">
+                        <div className="w-full flex flex-row justify-end">
+                            <button onClick={closeOverlay} className="text-xl bg-red-600 text-white rounded h-[30px] w-[30px]">
+                                <FontAwesomeIcon icon={faXmark} />
+                            </button>
+                        </div>
+                        <EmailContactForm t={t}/>
+                    </div>
+                </Overlay>
+            )}
+        </div>
+    }
+
     return (
         <div className={`${isDarkMode && "dark"}`}>
-+            <div className="bg-white dark:bg-neutral-800 min-h-dvh transition duration-400">
+            <div className="bg-white dark:bg-neutral-800 min-h-dvh transition duration-400">
+                {emailOverlay()}
                 <Menu MenuElementsList={menuElements}/>
             </div>
         </div>

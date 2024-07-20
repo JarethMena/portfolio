@@ -1,8 +1,8 @@
-type MenuElement = {
+export type MenuElementItem = {
     tooltip:string,
     icon: Icon,
     execute: () => void
     key: string
 }
 
-type Icon = React.ReactElement;
+export type Icon = React.ReactElement;
