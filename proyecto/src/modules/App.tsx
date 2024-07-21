@@ -10,6 +10,7 @@ import englishCv from '../assets/pdfs/CV_JarethMena_English.pdf';
 import {faGithub, faLinkedin} from "@fortawesome/free-brands-svg-icons";
 import Overlay from "./utilities/overlay.tsx";
 import EmailContactForm from "./utilities/email-contact-form.tsx";
+import {MenuElementItem} from "./types/MenuElement.tsx";
 
 function App() {
     const lngs = {
@@ -47,7 +48,7 @@ function App() {
         window.open(target, "_blank");
     };
 
-    const menuElements: MenuElement[] = [
+    const menuElements: MenuElementItem[] = [
         {
             tooltip: `${isDarkMode ? t('lights.on') : t('lights.off')}`,
             icon: <FontAwesomeIcon className="text-2xl text-neutral-100 dark:text-neutral-600" icon={ isDarkMode ? faSun : faMoon }/>,
