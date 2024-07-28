@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {MenuElementItem} from "../types/MenuElement.tsx";
+import {MenuElementItem} from "../types/MenuElementTypes.tsx";
 
 const MenuElement: React.FC<MenuElementItem> = ({ icon, tooltip, execute }) => {
     const [isVisible, setVisible] = useState(false);
@@ -14,7 +14,7 @@ const MenuElement: React.FC<MenuElementItem> = ({ icon, tooltip, execute }) => {
     return (
         <div className="relative">
             <div
-                className="bg-neutral-600 dark:bg-neutral-200 flex flex-row items-center justify-center mx-2 hover:cursor-pointer w-12 h-12  rounded-full transition-transform duration-200 ease-in-out rainbow-hover-aura hover:scale-125 active:bg-neutral-800 active:text-white "
+                className="bg-neutral-600 dark:bg-neutral-200 flex flex-row items-center justify-center hover:cursor-pointer w-12 h-12  rounded-full transition-transform duration-200 ease-in-out rainbow-hover-aura hover:scale-125 active:bg-neutral-800 active:text-white "
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
                 onClick={execute}

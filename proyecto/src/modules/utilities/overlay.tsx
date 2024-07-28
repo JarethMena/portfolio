@@ -14,11 +14,8 @@ const Overlay: FC<DarkOverlayProps> = ({ children, clickBgClose = false, bgClose
     };
 
     return (
-        <div
-            className="z-10 fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center"
-            onClick={handleClick}
-        >
-            <div className="relative">
+        <div className="z-20 fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center">
+            <div className="w-full h-full relative flex items-center justify-center" onClick={handleClick}>
                 {children}
             </div>
         </div>

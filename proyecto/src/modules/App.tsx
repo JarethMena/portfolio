@@ -1,6 +1,6 @@
 import '../tailwind/output.css'
 import Menu from './floating-menu/menu.tsx'
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import {faSun, faMoon, faGlobe, faFilePdf, faEnvelope, faXmark} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {useTranslation} from 'react-i18next';
@@ -10,7 +10,8 @@ import englishCv from '../assets/pdfs/CV_JarethMena_English.pdf';
 import {faGithub, faLinkedin} from "@fortawesome/free-brands-svg-icons";
 import Overlay from "./utilities/overlay.tsx";
 import EmailContactForm from "./utilities/email-contact-form.tsx";
-import {MenuElementItem} from "./types/MenuElement.tsx";
+import {MenuElementItem} from "./types/MenuElementTypes.tsx";
+import Home from "./home/home.tsx";
 
 function App() {
     const lngs = {
@@ -19,7 +20,7 @@ function App() {
     };
 
     const { t, i18n} = useTranslation();
-    const [isDarkMode, setDarkMode] = useState<boolean>(true);
+    const [isDarkMode, setDarkMode] = useState<boolean>(false);
     const [language, setLanguage] = useState<string>(lngs.english);
 
     const handleDarkMode = () => {
@@ -88,15 +89,26 @@ function App() {
     ];
 
     const [isOverlayOpen, setIsOverlayOpen] = useState(false);
-    const openOverlay = () => setIsOverlayOpen(true);
-    const closeOverlay = () => setIsOverlayOpen(false);
+    const bodyRef = useRef(document.body);
+    const scrollingHandler = () => {
+        setIsOverlayOpen(!isOverlayOpen);
+        !isOverlayOpen ? bodyRef.current.classList.add('overflow-hidden') : bodyRef.current.classList.remove('overflow-hidden');
+    }
+    const openOverlay = () => {
+        // setIsOverlayOpen(true);
+        scrollingHandler();
+    }
+    const closeOverlay = () => {
+        // setIsOverlayOpen(false);
+        scrollingHandler();
+    }
 
     const emailOverlay = () => {
       return <div>
             {isOverlayOpen && (
                 <Overlay clickBgClose={true} bgClose={closeOverlay}>
-                    <div className="p-4 bg-white rounded-xl shadow-lg">
-                        <div className="w-full flex flex-row justify-end">
+                    <div className="flex flex-col justify-center  p-4 bg-white rounded-xl shadow-lg w-[400px] max-[400px]:w-full max-[400px]:h-full max-[400px]:rounded-none">
+                        <div className=" flex flex-row justify-end">
                             <button onClick={closeOverlay} className="text-xl bg-red-600 text-white rounded h-[30px] w-[30px]">
                                 <FontAwesomeIcon icon={faXmark} />
                             </button>
@@ -109,10 +121,11 @@ function App() {
     }
 
     return (
-        <div className={`${isDarkMode && "dark"}`}>
-            <div className="bg-white dark:bg-neutral-800 min-h-dvh transition duration-400">
+        <div className={`${isDarkMode && "dark"} `}>
+            <div className={`bg-white dark:bg-gray-900 transition duration-400 ${isOverlayOpen && 'overflow-hidden'}`}>
                 {emailOverlay()}
                 <Menu MenuElementsList={menuElements}/>
+                <Home isDark={isDarkMode} t={t}/>
             </div>
         </div>
 

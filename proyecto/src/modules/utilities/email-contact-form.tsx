@@ -5,7 +5,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faEnvelope, faPaperPlane} from "@fortawesome/free-solid-svg-icons";
 import completedAction from '../../assets/lotties/completedAction.json';
 import Lottie from "lottie-react";
-import {ContactFormProps, FormData} from "../types/EmailContact.tsx";
+import {ContactFormProps, FormData} from "../types/EmailContactTypes.tsx";
 
 
 
@@ -18,7 +18,7 @@ const ContactForm: React.FC<ContactFormProps> = ({t}) => {
     };
 
     return (
-        <div className="w-[400px] text-neutral-700">
+        <div className=" w-full">
             {
                 state.succeeded ?
                    <>
