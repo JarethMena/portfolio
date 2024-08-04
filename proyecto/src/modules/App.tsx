@@ -43,7 +43,7 @@ function App() {
     },[language]);
 
     const github:string = "https://github.com/JarethMena";
-    const linkedin:string = "https://www.linkedin.com/in/jareth-mena/";
+    const linkedin:string = "https://www.linkedin.com/in/jareth-mena-684653312/";
 
     const handleRedirect = (target:string) => {
         window.open(target, "_blank");

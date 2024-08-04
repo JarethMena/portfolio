@@ -9,6 +9,7 @@ import Header from "./header.tsx";
 import Skills from "./skills.tsx";
 import AboutMe from "./aboutme.tsx";
 import ProjectCarousel from "./project-carousel.tsx";
+import ScrollToTopButton from '../utilities/scrolltotop.tsx';
 
 import licitnet from "../../assets/neutral/licitnet.png";
 import cenfofarma from "../../assets/neutral/cenfofarma.png";
@@ -136,6 +137,7 @@ const Home: React.FC<HomeProps> = ({ isDark, t }) => {
                 </div>
                 <div className="h-[88px]" />
             </div>
+            <ScrollToTopButton />
         </div>
     );
 };

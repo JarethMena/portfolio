@@ -20,7 +20,7 @@ const Banner:React.FC<{ t: (key: string) => string }> = ({t}) => {
         <div className="p-10 text-neutral-800 w-full h-full flex max-[800px]:flex-col-reverse bg-gradient-to-r from-[#079ef6] via-[#1e2d6f] to-[#02081a]">
             <div className="min-[800px]:p-10 min-[800px]:w-1/2 text-white flex flex-col">
                 <Typewriter strings={greetings} />
-                <div className="text-8xl max-[800px]:text-6xl h-fit font-rubikMonoOne underline">Mena</div>
+                <h1 className="text-8xl max-[800px]:text-6xl h-fit font-rubikMonoOne underline">Mena</h1>
                 <p className="pt-4 pb-4 font-extralight text-lg max-[800px]:text-sm">
                     {t('introduction')}
                 </p>
