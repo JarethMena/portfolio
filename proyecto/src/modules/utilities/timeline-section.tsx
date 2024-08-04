@@ -24,7 +24,7 @@ const TimelineSection: React.FC<TimelineSectionProps> = ({ items, t }) => {
                             <TimelineTime>
                                 {item.timePeriod} <h1 className="dark:text-mena-sun text-mena-ocean text-2xl ">{item.company}</h1>
                             </TimelineTime>
-                            <TimelineTitle className="font-thin text-mena-sky text-4xl">{item.title}</TimelineTitle>
+                            <TimelineTitle className="font-thin text-mena-graphite dark:text-mena-sky text-4xl">{item.title}</TimelineTitle>
                             <TimelineBody>{item.body}</TimelineBody>
                             <Accordion title={t('accomplishmentsTitle')}>
                                 <ul className="list-disc ml-6">

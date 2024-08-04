@@ -1,41 +1,19 @@
-import React, { memo } from 'react';
-import NeutralRocket from '../../assets/neutral/rocket-32x32-neutral.svg';
-import DarkRocket from '../../assets/dark-mode/rocket-32x32-dark.svg';
-import Planet from '../../assets/neutral/planet-orbit-neutral.svg';
-import Typewriter from "../utilities/typewriter.tsx";
+import React from 'react';
 import { HomeProps } from "../types/HomeTypes.tsx";
-import {
-    faBezierCurve,
-    faCloud,
-    faDatabase, faImage,
-    faLaptopCode,
-    faPalette,
-    faVialCircleCheck
-} from "@fortawesome/free-solid-svg-icons";
-import {
-    faCss3Alt,
-    faDocker,
-    faHtml5,
-    faJava,
-    faNodeJs,
-    faReact
-} from "@fortawesome/free-brands-svg-icons";
+import { faBezierCurve, faCloud, faDatabase, faImage, faLaptopCode, faPalette, faVialCircleCheck } from "@fortawesome/free-solid-svg-icons";
+import { faCss3Alt, faDocker, faHtml5, faJava, faNodeJs, faReact } from "@fortawesome/free-brands-svg-icons";
 import TimelineSection from "../utilities/timeline-section.tsx";
 import { SkillCategory } from "../types/ComponentTypes.tsx";
-import SkillCard from "../utilities/skill-card.tsx";
+import Banner from "./banner.tsx";
+import Header from "./header.tsx";
+import Skills from "./skills.tsx";
+import AboutMe from "./aboutme.tsx";
+import ProjectCarousel from "./project-carousel.tsx";
 
-const greetings = [
-    "Hi!, I am",
-    "¡Hola!, Soy",
-    "Bonjour!, Je suis",
-    "Hallo!, Ich bin",
-    "Ciao!, Sono",
-    "Olá!, Eu sou",
-    "Привет!, Я",
-    "こんにちは!, 私は",
-    "你好!, 我是",
-    "안녕하세요!, 저는"
-];
+import licitnet from "../../assets/neutral/licitnet.png";
+import cenfofarma from "../../assets/neutral/cenfofarma.png";
+import backendrep from "../../assets/neutral/backend-rep.png"
+import backendrep2 from "../../assets/neutral/backend-rep2.jpg"
 
 const skills: SkillCategory[] = [
     {
@@ -90,8 +68,34 @@ const skills: SkillCategory[] = [
 ];
 
 
-
 const Home: React.FC<HomeProps> = ({ isDark, t }) => {
+
+    const projects = [
+        {
+            image: backendrep,
+            title: t('projects.licitNetWebServices.title'),
+            description: t('projects.licitNetWebServices.description'),
+            repoLink: 'https://dev.azure.com/jmenal/_git/Polycat_Proyecto2?path=/LicitNetAPI'
+        },
+        {
+            image: licitnet,
+            title: t('projects.licitNetWebsite.title'),
+            description: t('projects.licitNetWebsite.description'),
+            repoLink: 'https://dev.azure.com/jmenal/_git/Polycat_Proyecto2?path=/LicitNetWebApp'
+        },
+        {
+            image: backendrep2,
+            title: t('projects.pharmacyShopWebServices.title'),
+            description: t('projects.pharmacyShopWebServices.description'),
+            repoLink: 'https://dev.azure.com/jmenal/_git/jareth-project-components?path=/product-svc'
+        },
+        {
+            image: cenfofarma,
+            title: t('projects.pharmacyShopWebsite.title'),
+            description: t('projects.pharmacyShopWebsite.description'),
+            repoLink: 'https://dev.azure.com/jmenal/_git/jareth-project-components?path=/frontend-svc'
+        },
+    ];
 
     const experience = [
         {
@@ -117,73 +121,20 @@ const Home: React.FC<HomeProps> = ({ isDark, t }) => {
                 t('experience.acc.accomplishments.3')
             ]
         },
-
     ];
-
-
-    const rocket = isDark ? DarkRocket : NeutralRocket;
-
-    const Skills = memo(() => {
-        return (
-            <div className="flex flex-col p-10">
-                <h1 className="pb-5 text-mena-sun dark:text-mena-sky text-8xl max-[800px]:text-6xl font-extrabold">{t('sectionTitle.skills')}</h1>
-                <hr className="border-neutral-300 dark:border-neutral-600 pb-5" />
-                <div className="flex flex-wrap gap-3 justify-center">
-                    {skills.map((skillCategory) => (
-                        <SkillCard key={skillCategory.category} skillCategory={skillCategory} />
-                    ))}
-                </div>
-            </div>
-        );
-    });
-
-    const Header = () => {
-        return (
-            <div className="flex flex-row justify-center w-full">
-                <img src={rocket} className="h-[80px]" alt="Rocket" />
-            </div>
-        )
-    }
-
-    const Banner = () => {
-        return (
-            <div className="p-10 text-neutral-800 w-full h-full flex max-[800px]:flex-col-reverse bg-gradient-to-r from-[#079ef6] via-[#1e2d6f] to-[#02081a]">
-                <div className="min-[800px]:p-10 min-[800px]:w-1/2 text-white flex flex-col">
-                    <Typewriter strings={greetings} />
-                    <div className="text-8xl max-[800px]:text-6xl h-fit font-rubikMonoOne underline">Mena</div>
-                    <p className="pt-4 pb-4 font-extralight text-lg max-[800px]:text-sm">
-                        {t('introduction')}
-                    </p>
-                </div>
-                <div className="overflow-hidden flex flex-row items-center justify-end w-1/2 max-[800px]:hidden">
-                    <img src={Planet} className="relative min-h-[300px] h-[300px]" alt="Planet" />
-                </div>
-            </div>
-        )
-    }
-
-    const AboutMe = () => {
-        return (
-            <div className="flex flex-col p-10">
-            <h1 className="pb-5 text-mena-sun dark:text-mena-sky text-8xl max-[800px]:text-6xl font-extrabold">{t('sectionTitle.aboutMe')}</h1>
-            <hr className="border-neutral-300 pb-5" />
-            <p className="text-neutral-800 dark:text-neutral-300 font-medium">
-                {t('aboutMe')}
-            </p>
-        </div>)
-    }
 
     return (
         <div className="flex flex-col justify-center items-center">
-            <Header />
-            <Banner />
+            <Header isDark={isDark} />
+            <Banner t={t} />
             <div className="w-full flex flex-col justify-center items-center">
                 <div className="max-w-[1000px]">
-                    <AboutMe/>
+                    <AboutMe t={t} />
                     <TimelineSection items={experience} t={t} />
-                    <Skills />
+                    <Skills t={t} skills={skills} />
+                    <ProjectCarousel projects={projects} />
                 </div>
-                <div className="max-[800px]:h-[88px]" />
+                <div className="h-[88px]" />
             </div>
         </div>
     );

@@ -61,6 +61,24 @@ i18n
                                 3: "Introduced an Audit Automation Process that streamlined operations across the entire account.",
                             }
                         }
+                    },
+                    projects: {
+                        licitNetWebServices: {
+                            title: 'Licit Net Web Services',
+                            description: "LicitNET is the ultimate solution for managing tenders in educational institutions in Costa Rica. This project, developed by the university group Polycat, leverages the power of C# and JavaScript programming languages, along with Azure's scalable and efficient infrastructure, to provide a robust and reliable platform."
+                        },
+                        licitNetWebsite: {
+                            title: 'Licit Net Website',
+                            description: 'LicitNET, designed to manage tenders in educational institutions in Costa Rica, is a solution developed by the Polycat group. This project combines C# and JavaScript with Azure infrastructure, offering exceptional performance and scalability.'
+                        },
+                        pharmacyShopWebServices: {
+                            title: 'Pharmacy Shop Web Services',
+                            description: 'PharmaNET Services offers a series of web service implementations dedicated to managing products, users, and purchases in an online pharmacy. This solution ensures efficient and secure management in the digital pharmaceutical environment.'
+                        },
+                        pharmacyShopWebsite: {
+                            title: 'Pharmacy Shop Website',
+                            description: 'PharmaNET Web is a comprehensive platform for online medicine purchases, implementing PharmaNET Services to ensure an optimal and reliable user experience.'
+                        }
                     }
                 }
             },
@@ -112,6 +130,24 @@ i18n
                                 2: "Desarrollé e implementé suites de pruebas automatizadas con Selenium en más de 10 sitios web para un cliente importante.",
                                 3: "Introduje un Proceso de Automatización de Auditorías que optimizó las operaciones en toda la cuenta.",
                             }
+                        }
+                    },
+                    projects: {
+                        licitNetWebServices: {
+                            title: 'Licit Net Web Services',
+                            description: 'LicitNET es la solución definitiva para la gestión de licitaciones en instituciones educativas de Costa Rica. Este proyecto, desarrollado por el grupo universitario Polycat, aprovecha la potencia de los lenguajes de programación C# y JavaScript, junto con la infraestructura escalable y eficiente de Azure, para proporcionar una plataforma robusta y confiable.'
+                        },
+                        licitNetWebsite: {
+                            title: 'Licit Net Website',
+                            description: 'LicitNET, diseñado para gestionar licitaciones en instituciones educativas de Costa Rica, es una solución desarrollada por el grupo Polycat. Este proyecto combina C# y JavaScript con la infraestructura de Azure, ofreciendo un rendimiento y escalabilidad excepcionales.'
+                        },
+                        pharmacyShopWebServices: {
+                            title: 'Pharmacy Shop Web Services',
+                            description: 'PharmaNET Services ofrece una serie de implementaciones de servicios web dedicados a la administración de productos, usuarios y compras en una farmacia online. Esta solución garantiza una gestión eficiente y segura en el entorno digital farmacéutico.'
+                        },
+                        pharmacyShopWebsite: {
+                            title: 'Pharmacy Shop Website',
+                            description: 'PharmaNET Web es una plataforma integral para la compra de medicamentos en línea, que implementa los servicios de PharmaNET Services para asegurar una experiencia de usuario óptima y confiable.'
                         }
                     }
                 }

@@ -19,10 +19,10 @@ const Accordion: React.FC<AccordionProps> = ({ title, children }) => {
     return (
         <div className="mb-4">
             <button
-                className="transition w-full rounded-lg rounded-b-none text-left p-4 bg-gray-200 hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 flex justify-between items-center"
+                className="transition w-full rounded-lg rounded-b-none text-left p-4 bg-mena-snow hover:bg-mena-wolf dark:bg-mena-nightlight dark:hover:bg-mena-deep flex justify-between items-center"
                 onClick={toggleAccordion}>
-                <p className="text-neutral-800 dark:text-neutral-200 font-semibold">{title}</p>
-                <FontAwesomeIcon icon={isOpen ? faCaretUp : faCaretDown} className="text-neutral-800 dark:text-neutral-200" />
+                <p className="text-mena-graphite dark:text-mena-wolf font-semibold">{title}</p>
+                <FontAwesomeIcon icon={isOpen ? faCaretUp : faCaretDown} className="text-mena-graphite dark:text-mena-wolf" />
             </button>
             <div
                 ref={contentRef}

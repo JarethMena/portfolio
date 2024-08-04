@@ -24,7 +24,16 @@ module.exports = {
       colors: {
         'mena-sun': '#de9008',
         'mena-ocean': '#283c9b',
-        'mena-sky': '#079ef6'
+        'mena-sky': '#079ef6',
+        'mena-light': '#ffffff',
+        'mena-night': '#111827',
+        'mena-nightlight': '#1f2940',
+        'mena-deep': '#080c14',
+        'mena-graphite': '#2b2b2b',
+        'mena-ash': '#3d3d3d',
+        'mena-snow': '#e3e3e3',
+        'mena-wolf': '#c2c2c2',
+        'mena-smoke': '#878686'
       }
     },
   },

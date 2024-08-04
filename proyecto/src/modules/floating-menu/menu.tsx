@@ -23,7 +23,7 @@ const Menu: React.FC<{MenuElementsList: MenuElementItem[]}> = ({MenuElementsList
                     className=" w-full max-[800px]:hidden flex justify-center items-center bottom-10 relative text-white text-xs">
                     <div className="rainbow-passive-aura p-4 rounded-full bg-neutral-800">Hover me to use the menu!</div>
                 </div>}
-                <div onMouseOver={hoverController} className={`gap-4 justify-center transition-all transform min-[800px]:hover:translate-y-[-20px] opacity-20 max-[800px]:opacity-100 hover:opacity-100 dark:bg-neutral-100 bg-neutral-800  flex flex-row items-center p-5 rounded-full max-[800px]:rounded-none hover:drop-shadow-lg duration-150 ease-in-out ${!hoveredOnce && 'min-[800px]:animate-bounce '}`}>
+                <div onMouseOver={hoverController} className={`gap-4 justify-center transition-all transform min-[800px]:hover:translate-y-[-20px] opacity-20 max-[800px]:opacity-100 hover:opacity-100 dark:bg-mena-light bg-mena-graphite flex flex-row items-center p-5 rounded-full max-[800px]:rounded-none hover:drop-shadow-lg duration-150 ease-in-out ${!hoveredOnce && 'min-[800px]:animate-bounce '}`}>
                     {renderMenuElements(MenuElementsList)}
                 </div>
             </div>

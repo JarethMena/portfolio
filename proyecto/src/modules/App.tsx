@@ -52,37 +52,37 @@ function App() {
     const menuElements: MenuElementItem[] = [
         {
             tooltip: `${isDarkMode ? t('lights.on') : t('lights.off')}`,
-            icon: <FontAwesomeIcon className="text-2xl text-neutral-100 dark:text-neutral-600" icon={ isDarkMode ? faSun : faMoon }/>,
+            icon: <FontAwesomeIcon className="text-2xl text-mena-light dark:text-mena-graphite" icon={ isDarkMode ? faSun : faMoon }/>,
             execute: () => {handleDarkMode()},
             key: 'darkmode'
         },
         {
             tooltip: t('switchToLang'),
-            icon: <FontAwesomeIcon className="text-2xl text-neutral-100 dark:text-neutral-600" icon={ faGlobe }/>,
+            icon: <FontAwesomeIcon className="text-2xl text-mena-light dark:text-mena-graphite" icon={ faGlobe }/>,
             execute: () => {handleLanguage()},
             key: 'switchlang'
         },
         {
             tooltip: t('downloadCv'),
-            icon: <FontAwesomeIcon className="text-2xl text-neutral-100 dark:text-neutral-600" icon={ faFilePdf }/>,
+            icon: <FontAwesomeIcon className="text-2xl text-mena-light dark:text-mena-graphite" icon={ faFilePdf }/>,
             execute: handleDownloadPDF,
             key: 'downloadcv',
         },
         {
             tooltip: t('sendEmail'),
-            icon: <FontAwesomeIcon className="text-2xl text-neutral-100 dark:text-neutral-600" icon={faEnvelope}/>,
+            icon: <FontAwesomeIcon className="text-2xl text-mena-light dark:text-mena-graphite" icon={faEnvelope}/>,
             execute: () => openOverlay(),
             key: 'sendemail',
         },
         {
             tooltip: 'Github',
-            icon: <FontAwesomeIcon className="text-2xl text-neutral-100 dark:text-neutral-600" icon={faGithub} />,
+            icon: <FontAwesomeIcon className="text-2xl text-mena-light dark:text-mena-graphite" icon={faGithub} />,
             execute: () => handleRedirect(github),
             key: 'github',
         },
         {
             tooltip: 'Linkedin',
-            icon: <FontAwesomeIcon className="text-2xl text-neutral-100 dark:text-neutral-600" icon={faLinkedin} />,
+            icon: <FontAwesomeIcon className="text-2xl text-mena-light dark:text-mena-graphite" icon={faLinkedin} />,
             execute: () => handleRedirect(linkedin),
             key: 'linkedin',
         },
@@ -122,7 +122,7 @@ function App() {
 
     return (
         <div className={`${isDarkMode && "dark"} `}>
-            <div className={`bg-white dark:bg-gray-900 transition duration-400 ${isOverlayOpen && 'overflow-hidden'}`}>
+            <div className={`bg-mena-light dark:bg-mena-night transition duration-400 ${isOverlayOpen && 'overflow-hidden'}`}>
                 {emailOverlay()}
                 <Menu MenuElementsList={menuElements}/>
                 <Home isDark={isDarkMode} t={t}/>
