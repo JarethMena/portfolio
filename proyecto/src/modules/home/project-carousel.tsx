@@ -26,14 +26,12 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects }) => {
                         <div className="absolute bottom-0 p-6 text-white">
                             <h2 className="text-4xl font-bold">{project.title}</h2>
                             <p className="text-md">{project.description}</p>
-                            <a
-                                href={project.repoLink}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="mt-4 inline-block bg-yellow-500 dark:bg-blue-600 text-black dark:text-white py-2 px-4 rounded-lg"
+                            <button
+                                onClick={() => window.open(project.repoLink, '_blank')}
+                                className="mt-4 font-bold w-[200px] inline-block bg-yellow-500 dark:bg-blue-600 text-black dark:text-white py-2 px-4 rounded-lg"
                             >
                                 Repo
-                            </a>
+                            </button>
                         </div>
                     </div>
                 ))}
