@@ -1131,6 +1131,10 @@ h6 {
   height: 80px;
 }
 
+.h-\[88px\] {
+  height: 88px;
+}
+
 .h-fit {
   height: -moz-fit-content;
   height: fit-content;
@@ -2019,10 +2023,6 @@ h6 {
 @media (max-width: 800px) {
   .max-\[800px\]\:hidden {
     display: none;
-  }
-
-  .max-\[800px\]\:h-\[88px\] {
-    height: 88px;
   }
 
   .max-\[800px\]\:w-full {
